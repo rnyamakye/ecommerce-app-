@@ -1,0 +1,55 @@
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 0px;
+  height: 250px;
+  transform-origin: top;
+  transition: 300ms ease-in-out;
+}
+.dropdown.inactive {
+  height: 0;
+  transition: 300ms ease-in-out;
+  opacity: 0;
+}
+.header {
+  background-image: url("../public/pexels-ma");
+  background-size: cover;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(100%); /* Start off-screen right */
+  }
+  80% {
+    transform: translateX(0); /* Slide into view */
+  }
+  100% {
+    transform: translateX(0); /* Stay in view */
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  display: flex;
+  animation: slideRight linear infinite;
+}
+li {
+  list-style: none;
+}
