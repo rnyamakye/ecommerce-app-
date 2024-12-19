@@ -10,6 +10,7 @@ import "./App.css";
 import { Footer } from "./components/Footer";
 import { CartProvider } from "./components/CartContext";
 import CartPage from "./components/pages/Cart";
+import PaymentPage from "./components/pages/Payment";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/shop/category/:category" element={<Shop />} />
           <Route path="/search" element={<SearchResults />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/payment" element={<PaymentPage />} />
         </Routes>
         <Footer />
       </Router>
