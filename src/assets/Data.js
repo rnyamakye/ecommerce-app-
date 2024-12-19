@@ -60,7 +60,7 @@ export const itemData = [
   {
     id: 8,
     name: "city escape premium cargo pants ",
-    image: "/public/lblAz5zi9BZoLgvGgVWVWq2wbNs.jpg",
+    image: "/lblAz5zi9BZoLgvGgVWVWq2wbNs.jpg",
     price: "$340",
     discount: "-15%",
     category: "men",
@@ -136,7 +136,7 @@ export const itemData = [
   {
     id: 17,
     name: "barbie shirt",
-    image: "/public/noV7hSRnkUAbLc2Hb70q9yEw0.jpg",
+    image: "/noV7hSRnkUAbLc2Hb70q9yEw0.jpg",
     price: "$50",
     discount: "-15%",
     category: "kids",
@@ -144,7 +144,7 @@ export const itemData = [
   {
     id: 18,
     name: "twill chinos",
-    image: "/public/lZj0t9RGvpalnxZEuj1Pus.jpg",
+    image: "/lZj0t9RGvpalnxZEuj1Pus.jpg",
     price: "$60",
     discount: "-15%",
     category: "kids",
@@ -152,7 +152,7 @@ export const itemData = [
   {
     id: 19,
     name: "Gathered sleeve jacket",
-    image: "/public/VC4mpr2CdcvSJV9Ecqsf76Q1FJY.jpg",
+    image: "/VC4mpr2CdcvSJV9Ecqsf76Q1FJY.jpg",
     price: "$420",
     discount: "-15%",
     category: "men",
@@ -160,7 +160,7 @@ export const itemData = [
   {
     id: 20,
     name: "eyelet embroidered shirt",
-    image: "/public/TdSyA7qGg9ie9L4W9bNPb70AI.jpg",
+    image: "/TdSyA7qGg9ie9L4W9bNPb70AI.jpg",
     price: "$350",
     discount: "-15%",
     category: "women",
@@ -168,7 +168,7 @@ export const itemData = [
   {
     id: 21,
     name: "relaxed fit denim jacket",
-    image: "/public/RatsiqByTycN2HiGOY1iD5gs.jpg",
+    image: "/RatsiqByTycN2HiGOY1iD5gs.jpg",
     price: "$200",
     discount: "-15%",
     category: "men",
@@ -176,7 +176,7 @@ export const itemData = [
   {
     id: 22,
     name: "oversized blazer",
-    image: "/public/ncE87NWZMmj1h6m4q2FJ6sKoR0.jpg",
+    image: "/ncE87NWZMmj1h6m4q2FJ6sKoR0.jpg",
     price: "$420",
     discount: "-15%",
     category: "men",
@@ -184,7 +184,7 @@ export const itemData = [
   {
     id: 23,
     name: "cotton jersey shirt",
-    image: "/public/4vpw1eTXBK0yczEnG77bnjsd460.jpg",
+    image: "/4vpw1eTXBK0yczEnG77bnjsd460.jpg",
     price: "$50",
     discount: "-15%",
     category: "kids",
@@ -192,7 +192,7 @@ export const itemData = [
   {
     id: 24,
     name: "women black smart slim fit shirt",
-    image: "/public/2bEMvUuRr65TVXJr8XjxG94uQk.webp",
+    image: "/2bEMvUuRr65TVXJr8XjxG94uQk.webp",
     price: "$340",
     discount: "-15%",
     category: "women",
@@ -200,7 +200,7 @@ export const itemData = [
   {
     id: 25,
     name: "slim fit flared twill pants",
-    image: "/public/tWk9lVg1x4XLiGVtz6LH22vmY.jpg",
+    image: "/tWk9lVg1x4XLiGVtz6LH22vmY.jpg",
     price: "$220",
     discount: "-15%",
     category: "men",
@@ -208,16 +208,16 @@ export const itemData = [
   {
     id: 26,
     name: "essential tee",
-    image: "/public/BnBn3QtttXstdl9r8I3QpwTanF8.jpg",
+    image: "/BnBn3QtttXstdl9r8I3QpwTanF8.jpg",
     price: "$190",
     discount: "-15%",
     category: "men",
   },
-  
+
   {
     id: 27,
     name: "biker jacket",
-    image: "/public/tGSGFIrwNCzdCKn4Nu1njvFlo.jpg",
+    image: "/tGSGFIrwNCzdCKn4Nu1njvFlo.jpg",
     price: "$75",
     discount: "-15%",
     category: "kids",
@@ -225,7 +225,7 @@ export const itemData = [
   {
     id: 28,
     name: "denim shacket",
-    image: "/public/hQqndVtKPBxR6ybiGk3sZU3mNJg.webp",
+    image: "/hQqndVtKPBxR6ybiGk3sZU3mNJg.webp",
     price: "$75",
     discount: "-15%",
     category: "kids",
@@ -233,7 +233,7 @@ export const itemData = [
   {
     id: 29,
     name: "camo trefoil shirt",
-    image: "/public/EMGLtfIduG6Gr5zZVDXj1DL4b4A.jpg",
+    image: "/EMGLtfIduG6Gr5zZVDXj1DL4b4A.jpg",
     price: "$215",
     discount: "-15%",
     category: "men",
@@ -241,7 +241,7 @@ export const itemData = [
   {
     id: 30,
     name: "black floral tie-up neck chiffon dress",
-    image: "/public/qMP9OmSXpE7KbeAQVPqlXcqSfY.webp",
+    image: "/qMP9OmSXpE7KbeAQVPqlXcqSfY.webp",
     price: "$340",
     discount: "-15%",
     category: "women",
@@ -249,7 +249,7 @@ export const itemData = [
   {
     id: 31,
     name: "pink tee",
-    image: "/public/UMmxenuH3mnGVz1C4GDaMOA3aRI.jpg",
+    image: "/UMmxenuH3mnGVz1C4GDaMOA3aRI.jpg",
     price: "$199",
     discount: "-15%",
     category: "men",
@@ -257,7 +257,7 @@ export const itemData = [
   {
     id: 32,
     name: "oversized crinkled dress",
-    image: "/public/mtqMM1CBWX0cQ0utzx4jjxetiUs.jpg",
+    image: "/mtqMM1CBWX0cQ0utzx4jjxetiUs.jpg",
     price: "$340",
     discount: "-15%",
     category: "women",
@@ -265,7 +265,7 @@ export const itemData = [
   {
     id: 33,
     name: "z.n.e premium full-zip hooded track suit",
-    image: "/public/F3rlm9FBQyS4c6g3Zv2kY6yro.jpg",
+    image: "/F3rlm9FBQyS4c6g3Zv2kY6yro.jpg",
     price: "$200",
     discount: "-15%",
     category: "men",
@@ -273,7 +273,7 @@ export const itemData = [
   {
     id: 34,
     name: "carpenter joggers",
-    image: "/public/fJS4NdrWDdoDTYhp405kvf1uQ8Y.jpg",
+    image: "/fJS4NdrWDdoDTYhp405kvf1uQ8Y.jpg",
     price: "$60",
     discount: "-15%",
     category: "kids",
@@ -281,7 +281,7 @@ export const itemData = [
   {
     id: 35,
     name: "regular fit coated jacket",
-    image: "/public/vFTM3OLGz4l6dnWF2eFreoKHTok.jpg",
+    image: "/vFTM3OLGz4l6dnWF2eFreoKHTok.jpg",
     price: "$200",
     discount: "-15%",
     category: "men",
@@ -289,7 +289,7 @@ export const itemData = [
   {
     id: 36,
     name: "loose jeans",
-    image: "/public/OF9382aZDycP5mjBOY8IZYGQO68.jpg",
+    image: "/OF9382aZDycP5mjBOY8IZYGQO68.jpg",
     price: "$220",
     discount: "-15%",
     category: "men",

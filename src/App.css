@@ -20,8 +20,22 @@ body {
   transition: 300ms ease-in-out;
   opacity: 0;
 }
+
+.search-bar.active {
+  opacity: 1;
+  visibility: visible;
+  transition: 300ms ease-in-out;
+  transform-origin: right;
+  min-width: 10rem;
+}
+.search-bar.inactive {
+  width: 0;
+  transition: 300ms ease-in-out;
+  opacity: 0;
+}
+
 .header {
-  background-image: url("../public/pexels-ma");
+  background-image: url("../pexels-ma");
   background-size: cover;
 }
 

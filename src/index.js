@@ -11,11 +11,14 @@ const firebaseConfig = {
   appId: "1:866835765601:web:eeeb72dc348b9b76e04d20",
 };
 
+import { getAuth } from "firebase/auth";
+
 //init firebase app
 initializeApp(firebaseConfig);
 
 //init services
 const db = getFirestore();
+const auth = getAuth()
 
 // collection ref
 const colRef = collection(db, 'items')

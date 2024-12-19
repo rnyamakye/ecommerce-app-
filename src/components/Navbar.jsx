@@ -1,40 +1,60 @@
-import DropdownButton from "./Dropdown";
-import { HiShoppingBag } from "react-icons/hi2";
-import { FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
+// src/Navbar.jsx
+import DropdownButton from "./Dropdown"; // Importing a DropdownButton component for additional options
+import { HiShoppingBag } from "react-icons/hi2"; // Shopping bag icon
+import { NavLink } from "react-router-dom"; // NavLink for navigation
+import SearchBar from "./SearchBar";
+import { useCart } from "./CartContext";
 
 export const Navbar = () => {
+  const { cartItems } = useCart();
   return (
     <>
-      <nav className="p-[1.5rem] h-[80px] w-full fixed top-0 z-50 -bg-white">
+      <nav className="p-[1.5rem] h-[100px] w-full fixed top-0 z-50 -bg-white flex justify-center">
+        {/* Mobile view (hidden on large screens) */}
         <div className="flex items-center justify-between lg:hidden">
           <div className="w-[150px]">
-            <Link to={"/"}>
-              {" "}
+            <NavLink to={"/"}>
               <img src="/Screenshot 2024-12-04 135610.png" alt="Logo..." />
-            </Link>
+            </NavLink>
           </div>
           <DropdownButton />
         </div>
-        <div className="hidden lg:flex items-center justify-evenly lg:text-[1.2rem] font-medium">
-          <div className="flex gap-[50px]">
-            <Link to={"/shop"}>SHOP</Link>
-            <Link to={""}>MEN</Link>
-            <Link to={""}>WOMEN</Link>
-            <Link to={""}>KIDS</Link>
+
+        {/* Desktop view (visible on large screens) */}
+        <div className="hidden lg:flex items-center justify-evenly lg:text-[1.2rem] font-medium gap-[50px] w-[90%]">
+          <div className="flex gap-[50px] font-medium md:text-[1.4rem]">
+            <NavLink to="/shop/category/all" className="">
+              SHOP
+            </NavLink>
+            <NavLink to="/shop/category/men" className="">
+              MEN
+            </NavLink>
+            <NavLink to="/shop/category/women" className="">
+              WOMEN
+            </NavLink>
+            <NavLink to="/shop/category/kids" className="">
+              KIDS
+            </NavLink>
           </div>
-          <div>
+          <NavLink to={"/"}>
             <img
               src="/Screenshot 2024-12-04 135610.png"
               alt="Logo..."
               className="w-[150px]"
             />
-          </div>
-          <div className="flex gap-[30px] items-center lg:text-[1.2rem]">
-            <Link to={"/about"}>ABOUT</Link>
-            <Link to={"/contact"}>CONTACT</Link>
-            <FaSearch />
-            <HiShoppingBag />
+          </NavLink>
+          <div className="flex gap-[30px] items-center md:text-[1.4rem]">
+            <NavLink to={"/about"}>ABOUT</NavLink>
+            <NavLink to={"/contact"}>CONTACT</NavLink>
+            <SearchBar />
+            <NavLink to="/cart" className="relative flex items-center">
+              <HiShoppingBag className="text-xl" />
+              {cartItems.length > 0 && (
+                <span className="absolute top-[-5px] right-[-10px] bg-red-500 text-white text-xs rounded-full px-1">
+                  {cartItems.length}
+                </span>
+              )}
+            </NavLink>
           </div>
         </div>
       </nav>

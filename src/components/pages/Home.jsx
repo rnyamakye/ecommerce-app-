@@ -97,7 +97,7 @@ export const Home = () => {
           </div>
         </section>
         <section className="flex flex-col items-center px-10">
-          <div className="flex flex-col gap-[30px] items-center">
+          <div className="flex flex-col gap-[30px] md:gap-[100px] items-center">
             <div>
               <h2 className="text-4xl font-medium">FEATURED</h2>
             </div>

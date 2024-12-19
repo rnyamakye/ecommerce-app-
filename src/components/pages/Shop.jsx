@@ -1,111 +1,89 @@
-// src/Shop.jsx
-import { useRef, useState } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { FaChevronRight } from "react-icons/fa6";
-import { NavLink } from "react-router-dom"; // Change this to NavLink for active styles
+import { useParams, NavLink } from "react-router-dom";
 import { itemData } from "../../assets/Data"; // Import your data
 import { ShopItemCard } from "../itemCard";
+import { FaChevronRight } from "react-icons/fa6";
 
 export const Shop = () => {
-  const contentRef = useRef(null);
-  const { scrollYProgress } = useScroll();
+  const { category } = useParams(); // Get the category from the URL
 
-  // Create a smooth scroll effect
-  const smoothProgress = useSpring(scrollYProgress, {
-    mass: 1.5,
-    stiffness: 0,
-    damping: 20,
-  });
-
-  // Transform the scroll progress to a y value for motion
-  const y = useTransform(smoothProgress, (value) => {
-    if (contentRef.current) {
-      const contentHeight = contentRef.current.scrollHeight; // Get the height of the content
-      return value * -(contentHeight - window.innerHeight); // Calculate the y position
-    }
-    return 0; // Default return if contentRef is not available
-  });
-
-  // State for selected category
-  const [selectedCategory, setSelectedCategory] = useState("all");
-
-  // Filter items based on selected category
+  // Determine if we should filter by category or show all items
   const filteredItems =
-    selectedCategory === "all"
-      ? itemData
-      : itemData.filter((item) => item.category === selectedCategory);
+    category === "all"
+      ? itemData // Show all items if category is 'all'
+      : itemData.filter((item) => item.category === category); // Filter by specific category
 
   return (
-    <motion.main
-      ref={contentRef}
-      style={{ y }}
-      className=" flex flex-col gap-[100px] md:gap-[150px] overflow-x-hidden w-[100vw] items-center py-[100px]"
-    >
+    <main className="flex flex-col gap-[100px] md:gap-[150px] lg:gap-[100px] overflow-x-hidden w-[100vw] items-center pb-[100px] pt-[15rem]">
       <header className="flex flex-col gap-[50px] lg:mx-10 items-center">
         <div className="flex flex-col items-center gap-[20px]">
-          <h1 className="text-[2.5rem] md:text-[3rem] font-bold">SHOP</h1>
+          <h1 className="text-[2.5rem] md:text-[3rem] lg:text-[4rem] font-bold capitalize">
+            Shop
+          </h1>
           <div className="flex items-center md:text-[21px] gap-5">
-            <span>Home</span> <FaChevronRight className="text-[0.8rem]" />
-            <span className="-text-blue"></span>
+            <span>Home</span>
+            <FaChevronRight className="text-[1rem]" />
+            <span className="-text-blue">Shop</span>
           </div>
         </div>
-        <div className="flex gap-[10px]">
+        <div className="flex gap-[10px] md:gap-[20px] text-[1.2rem] md:text-[1.8rem]">
+          {/* Links for filtering */}
           <NavLink
-            to="/shop"
-            className="text-[1.2rem] font-medium"
+            to="/shop/category/all"
+            className=" font-medium"
             style={({ isActive }) => ({
               opacity: isActive ? 0.5 : 1,
+              textDecoration: isActive ? "underline" : "none",
             })}
-            onClick={() => setSelectedCategory("all")}
           >
             ALL
           </NavLink>
           <NavLink
-            to="/shop"
-            className="text-[1.2rem] font-medium"
+            to="/shop/category/men"
+            className=" font-medium"
             style={({ isActive }) => ({
               opacity: isActive ? 0.5 : 1,
+              textDecoration: isActive ? "underline" : "none",
             })}
-            onClick={() => setSelectedCategory("men")}
           >
             MEN
           </NavLink>
           <NavLink
-            to="/shop"
-            className="text-[1.2rem] font-medium"
+            to="/shop/category/women"
+            className=" font-medium"
             style={({ isActive }) => ({
               opacity: isActive ? 0.5 : 1,
+              textDecoration: isActive ? "underline" : "none",
             })}
-            onClick={() => setSelectedCategory("women")}
           >
             WOMEN
           </NavLink>
           <NavLink
-            to="/shop"
-            className="text-[1.2rem] font-medium"
+            to="/shop/category/kids"
+            className=" font-medium"
             style={({ isActive }) => ({
               opacity: isActive ? 0.5 : 1,
+              textDecoration: isActive ? "underline" : "none",
             })}
-            onClick={() => setSelectedCategory("kids")}
           >
             KIDS
           </NavLink>
         </div>
       </header>
-      <section ref={contentRef} className="md:mx-10">
-        <div className="flex flex-col gap-[30px] items-center md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-[20px]">
-          {filteredItems.map((item) => (
+      <div className="flex flex-col gap-[30px] items-center md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-[20px]">
+        {filteredItems.length > 0 ? (
+          filteredItems.map((item) => (
             <ShopItemCard
               key={item.id}
               image={item.image}
               name={item.name}
-              discount={item.discount}
               price={item.price}
               category={item.category}
             />
-          ))}
-        </div>
-      </section>
-    </motion.main>
+          ))
+        ) : (
+          <p>No items found in this category.</p>
+        )}
+      </div>
+    </main>
   );
 };
