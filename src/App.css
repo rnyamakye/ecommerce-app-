@@ -11,7 +11,7 @@ body {
   opacity: 1;
   visibility: visible;
   margin-top: 0px;
-  height: 250px;
+  height: 320px;
   transform-origin: top;
   transition: 300ms ease-in-out;
 }
@@ -21,7 +21,7 @@ body {
   opacity: 0;
 }
 
-.search-bar.active {
+/* .search-bar.active {
   opacity: 1;
   visibility: visible;
   transition: 300ms ease-in-out;
@@ -32,12 +32,8 @@ body {
   width: 0;
   transition: 300ms ease-in-out;
   opacity: 0;
-}
+} */
 
-.header {
-  background-image: url("../pexels-ma");
-  background-size: cover;
-}
 
 @keyframes slideRight {
   0% {

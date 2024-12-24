@@ -1,6 +1,7 @@
 // src/components/DropdownButton.js
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const DropdownButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,26 +72,33 @@ const DropdownButton = () => {
         } absolute -right-6 w-[100vw] flex justify-start p-5  bg-white z-10 transition-all duration-300 ease-in-out -bg-white shadow-customShadow`}
       >
         <div
-          className={`menu-list py-1 flex w-full flex-col gap-[5px] text-[20px] font-medium ${
+          className={` py-1 flex w-full flex-col gap-[5px] text-[20px] font-medium ${
             isOpen ? "active" : "inactive"
           }`}
         >
           <Link
-            to={"/shop"}
+            to={"/shop/category/all"}
             className="block px-4 py-2 text-sm text-gray-700 hover:opacity-50 text-[24px]"
             onClick={closeDropdown}
           >
             SHOP
           </Link>
           <Link
-            to={""}
+            to={"shop/category/men"}
             className="block px-4 py-2 text-sm text-gray-700 hover:opacity-50 text-[24px]"
             onClick={closeDropdown}
           >
             MEN
           </Link>
           <Link
-            to={""}
+            to={"shop/category/women"}
+            className="block px-4 py-2 text-sm text-gray-700 hover:opacity-50 text-[24px]"
+            onClick={closeDropdown}
+          >
+            WOMEN
+          </Link>
+          <Link
+            to={"shop/category/kids"}
             className="block px-4 py-2 text-sm text-gray-700 hover:opacity-50 text-[24px]"
             onClick={closeDropdown}
           >
@@ -110,6 +118,9 @@ const DropdownButton = () => {
           >
             CONTACT
           </Link>
+          <div className="px-4">
+            <SearchBar />
+          </div>
         </div>
       </div>
     </div>

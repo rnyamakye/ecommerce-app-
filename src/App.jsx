@@ -10,24 +10,34 @@ import "./App.css";
 import { Footer } from "./components/Footer";
 import { CartProvider } from "./components/CartContext";
 import CartPage from "./components/pages/Cart";
-import PaymentPage from "./components/pages/Payment";
+import { CheckoutPage } from "./components/pages/Checkout";
+import OrderHistory from "./components/pages/OrderHistory";
+import { OrderProvider } from "./components/OrderContext";
+import ItemDetails from "./components/pages/itemDetails";
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <CartProvider>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route index path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/shop/category/:category" element={<Shop />} />
-          <Route path="/search" element={<SearchResults />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/payment" element={<PaymentPage />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <OrderProvider>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route index path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/shop/category/:category" element={<Shop />} />
+            <Route path="/search" element={<SearchResults />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/order-history" element={<OrderHistory />} />
+            <Route path="/item/:id" element={<ItemDetails />} />
+          </Routes>
+          <Footer />
+          <ToastContainer />
+        </Router>
+      </OrderProvider>
     </CartProvider>
   );
 }

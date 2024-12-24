@@ -41,30 +41,37 @@ const SearchBar = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search..."
-          className={`border-gray-300 -bg-gray rounded transition-all duration-300 ease-in-out p-2 focus:outline-none focus:ring-2 focus:-ring-blue/50 focus:-bg-white ${
-            isActive ? "w-[12rem] opacity-100" : "w-0 opacity-0"
+          className={`border-gray-300 bg-gray rounded transition-all duration-300 ease-in-out p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            isActive || window.innerWidth < 768
+              ? "md:w-[12rem] opacity-100 -bg-gray"
+              : "w-0 opacity-0"
           }`}
           style={{
             transition: "width 300ms ease-in-out, opacity 300ms ease-in-out",
             overflow: "hidden",
-            width: isActive ? (searchTerm.length > 0 ? "12rem" : "6rem") : "0",
+            width: isActive
+              ? searchTerm.length > "0"
+                ? "12rem"
+                : "6rem"
+              : "0" | window.innerWidth < 768 ? "90vw" : "0",
           }}
           onBlur={() => setIsActive(false)} // Hide input when it loses focus
         />
         <button
           type="submit"
           className={`ml-2 bg-blue-500 text-white rounded p-2 ${
-            isActive ? "block" : "hidden"
+            isActive || window.innerWidth < 768 ? "block" : "hidden"
           }`}
         >
-          <FaSearch className="text-xl" />
+          <FaSearch className="md:text-[20px]" />
         </button>
-        {!isActive && (
+        {!isActive && window.innerWidth >= 768 && (
           <button
+            type="button"
             onClick={() => setIsActive(true)}
             className="flex items-center ml-2"
           >
-            <FaSearch className="text-xl" />
+            <FaSearch className="md:text-[20px]" />
           </button>
         )}
       </form>

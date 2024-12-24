@@ -2,6 +2,13 @@ import { Link } from "react-router-dom";
 import { useCart } from "./CartContext";
 
 export const ItemCard = ({ name, image, price, discount, to }) => {
+  const { addToCart } = useCart(); // Accessing addToCart function
+
+  const handleAddToCart = () => {
+    const item = { id: name, image, name, price }; // Create an item object
+    addToCart(item); // Add item to cart
+  };
+
   return (
     <Link className="flex flex-col gap-[5px] w-[80vw] md:w-fit" to={to}>
       <div className="group relative w-[80vw] h-[400px] md:w-[30vw] md:h-[600px] cursor-pointer overflow-hidden transition-opacity hover:opacity-100 lg:w-[400px] lg:h-[500px]">
@@ -14,10 +21,11 @@ export const ItemCard = ({ name, image, price, discount, to }) => {
         </span>
         <div className="group-hover:-bg-black/35 w-full h-full absolute group-hover:flex-col items-center justify-end top-0 group-hover:flex transition-all  duration-300 ease-in-out ">
           <button
+            onClick={handleAddToCart}
             to={to}
             className="-bg-white text-[20px] font-medium group-hover:w-fit px-6 py-3 mb-[100px] hover:scale-[1.1] group-hover:block hidden  transition-all duration-300"
           >
-            Buy Now
+            Add to Cart
           </button>
         </div>
       </div>
@@ -26,7 +34,7 @@ export const ItemCard = ({ name, image, price, discount, to }) => {
         <span className="text-[18px] font-semibold uppercase hover:underline transition-all duration-300 ">
           {name}
         </span>
-        <span className="text-[16px] font-semibold">{price}</span>
+        <span className="text-[16px] font-semibold">${price}</span>
       </div>
     </Link>
   );
@@ -56,7 +64,7 @@ export const CartItemCard = ({ name, image, price, discount, to }) => {
         <span className="text-[18px] font-semibold uppercase hover:underline transition-all duration-300 ">
           {name}
         </span>
-        <span className="text-[16px] font-semibold">{price}</span>
+        <span className="text-[16px] font-semibold">${price}</span>
       </div>
     </Link>
   );
@@ -86,7 +94,7 @@ export const ShopItemCard = ({ name, image, price, to }) => {
             className="-bg-white text-[20px] font-medium group-hover:w-fit px-6 py-3 mb-[100px] hover:scale-[1.1] group-hover:block hidden  transition-all duration-300"
             onClick={handleAddToCart}
           >
-            Buy Now
+            Add to Cart
           </button>
         </div>
       </div>
@@ -95,7 +103,7 @@ export const ShopItemCard = ({ name, image, price, to }) => {
         <span className="text-[18px] font-semibold uppercase hover:underline transition-all duration-300 ">
           {name}
         </span>
-        <span className="text-[16px] font-semibold">{price}</span>
+        <span className="text-[16px] font-semibold">${price}</span>
       </div>
     </Link>
   );
@@ -104,7 +112,7 @@ export const ShopItemCard = ({ name, image, price, to }) => {
 export const GenderCard = ({ image, to, gender }) => {
   return (
     <Link to={to}>
-      <div className="group relative w-[95vw] h-[400px] lg:w-[35vw] lg:h-[600px] cursor-pointer overflow-hidden transition-opacity hover:opacity-100 md:h-[600px]">
+      <div className="group relative w-[95vw] h-[400px] md:w-[45vw] lg:w-[30vw] lg:h-[600px] cursor-pointer overflow-hidden transition-opacity hover:opacity-100 md:h-[500px]">
         <img
           src={image}
           className="object-cover w-full h-[100%] md:h-full transform transition duration-500 group-hover:scale-[1.07] rounded-[3px]"
@@ -112,7 +120,7 @@ export const GenderCard = ({ image, to, gender }) => {
 
         <div className="group-hover:-bg-black/15 w-full h-full absolute group-hover:flex-col items-center justify-end top-0 group-hover:flex transition-all  duration-300 ease-in-out ">
           {" "}
-          <div className="-text-white text-[24px] md:text-[3rem] left-5 absolute bottom-2 group-hover:-translate-y-2 transition-all duration-300 ease-in-out">
+          <div className="-text-white text-[24px] md:text-[2rem] left-5 absolute bottom-2 group-hover:-translate-y-2 transition-all duration-300 ease-in-out">
             {gender}
           </div>
         </div>
@@ -130,9 +138,9 @@ export const SliderItemCard = ({ image, to, name, price }) => {
           className="object-cover  w-[100%] h-[600px] lg:h-[650px] lg:w-[550px] transform transition duration-500 group-hover:scale-[1.05] rounded-[3px]"
         />
         <div className="group-hover:-bg-black/35 w-full h-full absolute group-hover:flex-col items-center justify-end top-0 group-hover:flex transition-all  duration-300 ease-in-out ">
-          <Link to={to}>
+          <Link to={"/shop/category/all"}>
             <button className="-bg-blue -text-white text-[20px] font-medium group-hover:w-fit px-6 py-3 mb-[100px] hover:scale-[1.1] group-hover:block hidden  transition-all duration-300">
-              Buy Now
+              Add to Cart
             </button>
           </Link>
         </div>
@@ -142,7 +150,7 @@ export const SliderItemCard = ({ image, to, name, price }) => {
         <span className="text-[20px] font-semibold uppercase hover:underline group-hover:underline transition-all duration-300">
           {name}
         </span>
-        <span className="text-[18px] font-semibold">{price}</span>
+        <span className="text-[18px] font-semibold">${price}</span>
       </div>
     </div>
   );

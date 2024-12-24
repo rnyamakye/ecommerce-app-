@@ -6,8 +6,6 @@ import { SlidingTextImage } from "../slidingTextImage";
 import { TfiArrowTopRight } from "react-icons/tfi";
 import { SliderItemCard } from "../itemCard";
 import Carousel from "../Slider";
-import { Footer } from "../Footer";
-import SmoothScroll from "../SmoothScroll";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Accordion from "../accordion";
 
@@ -40,10 +38,10 @@ export const Home = () => {
       <motion.main
         ref={contentRef}
         style={{ y }}
-        className=" flex flex-col gap-[100px] md:gap-[150px] overflow-x-hidden w-[100vw] pb-[50px]"
+        className=" flex flex-col gap-[100px] md:gap-[100px] overflow-x-hidden w-[100vw] py-[50px]"
       >
         <header className="flex flex-col gap-[50px]">
-          <div className="bg-[url('/pexels-mart-production-7255322(2).jpg')] w-screen bg-cover bg-center h-[380px] md:h-[450px] flex items-end justify-center lg:justify-start pb-[10%] lg:pb-[10%] lg:h-[80vh]">
+          <div className="bg-[url('/pexels-mart-production-7255322(2).jpg')] w-screen bg-cover bg-center h-[380px] md:h-[500px] flex items-end justify-center lg:justify-start pb-[10%] lg:pb-[10%] lg:h-[60vh]">
             <div className="flex flex-col gap-5 items-center lg:items-start lg:w-[50%] mx-[10vw]">
               <h1 className="text-[2.4rem] md:text-[40px] font-bold -text-white text-center leading-none lg:text-[6rem] lg:text-start">
                 WEAR CLOTHES THAT MATTER
@@ -79,29 +77,23 @@ export const Home = () => {
           </div>
         </header>
         <section className="flex flex-col items-center">
-          <div className="flex flex-col gap-[30px] px-10 w-fit items-center">
-            <div className="text-4xl font-medium lg:text-[4rem]">
+          <div className="flex flex-col gap-[50px] px-10 w-fit items-center">
+            <div className="text-[2rem] font-medium lg:text-[2.4rem]">
               BEST SELLERS
             </div>
-            <div className="flex flex-col items-center md:flex-row gap-[30px]">
+            <div className="flex w-[60vw] flex-col items-center md:flex-row gap-[30px]">
               <Accordion items={bestSellers} />
-            </div>
-            <div className="flex flex-col items-center">
-              <SlidingTextImage
-                image={"/fGGdZvb7EzGR1bQmw3Qsv45WJs.jpg"}
-                text={"See more best sellers "}
-                icon={<TfiArrowTopRight />}
-                className={"animate-slideRight"}
-              />
             </div>
           </div>
         </section>
         <section className="flex flex-col items-center px-10">
           <div className="flex flex-col gap-[30px] md:gap-[100px] items-center">
             <div>
-              <h2 className="text-4xl font-medium">FEATURED</h2>
+              <h2 className="text-[2rem] font-medium lg:text-[2.4rem]">
+                FEATURED
+              </h2>
             </div>
-            <div className="flex flex-col gap-[30px] items-center md:flex-row lg:flex-row">
+            <div className="flex flex-col md:gap-[15px] items-center md:flex-row lg:flex-row">
               {featured.map((item) => (
                 <ItemCard
                   key={item.id}
@@ -112,23 +104,17 @@ export const Home = () => {
                 />
               ))}
             </div>
-            <div className="flex flex-col items-center">
-              <SlidingTextImage
-                image={"/9SazqeFTnXrYVlCuTm8R7IBsboU.jpg"}
-                text={"See more best sellers"}
-                icon={<TfiArrowTopRight />}
-                className={"animate-slideLeft"}
-              />
-            </div>
           </div>
         </section>
         <section className="flex flex-col items-center gap-[100px]">
-          <div className="flex flex-col items-center gap-[40px]">
+          <div className="flex flex-col items-center gap-[50px]">
             <div className="flex flex-col items-center gap-[20px]">
-              <h2 className="text-4xl font-medium uppercase">Shop</h2>
+              <h2 className="text-[2rem] lg:text-[2.4rem] font-medium uppercase">
+                Shop
+              </h2>
               <Button text={"VISIT SHOP"} />
             </div>
-            <div className="flex flex-col gap-[25px] lg:flex-row">
+            <div className="flex flex-col gap-[25px] md:flex-row">
               <GenderCard
                 image={"/5uW8h1Y8Jk6czLgq84bc2MyPs.jpg"}
                 gender={"Men"}
@@ -139,8 +125,10 @@ export const Home = () => {
               />
             </div>
           </div>
-          <div className="px-10 flex flex-col items-center gap-[30px]">
-            <h2 className="text-[30px] font-medium">YOU MAY ALSO LIKE</h2>
+          <div className="px-10 flex flex-col items-center gap-[50px]">
+            <h2 className="text-[2rem] lg:text-[2.4rem] font-medium">
+              YOU MAY ALSO LIKE
+            </h2>
             <div>
               <Carousel autoSlide={true}>
                 {[
