@@ -2,6 +2,7 @@ import { useParams, NavLink } from "react-router-dom";
 import { itemData } from "../../assets/Data"; // Import your data
 import { ShopItemCard } from "../itemCard";
 import { FaChevronRight } from "react-icons/fa6";
+import { useEffect } from "react";
 
 export const Shop = () => {
   const { category } = useParams(); // Get the category from the URL
@@ -11,6 +12,10 @@ export const Shop = () => {
     category === "all"
       ? itemData // Show all items if category is 'all'
       : itemData.filter((item) => item.category === category); // Filter by specific category
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className="flex flex-col gap-[100px] md:gap-[150px] lg:gap-[100px] overflow-x-hidden w-[100vw] items-center pb-[100px] pt-[15rem]">

@@ -9,6 +9,17 @@ export const Button = ({ text, className, icon, onClick }) => {
   );
 };
 
+export const ButtonBlue = ({ text, className, icon, onClick }) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`${className} w-fit px-[50px] py-[12px] lg:px-[2rem] lg:py-[1.2rem] text-[22px] lg:text-[1.8rem] font-semibold -text-white -bg-blue hover:scale-105 transition-all duration-300 ease-in-out`}
+    >
+      {text}
+    </button>
+  );
+};
+
 export const ButtonWhite = ({ text, className, icon, onClick }) => {
   return (
     <button

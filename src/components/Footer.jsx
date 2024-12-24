@@ -3,18 +3,22 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-
+import { useNavigate } from "react-router-dom";
 import { ButtonWhite } from "./Button";
 import { FaGithub } from "react-icons/fa";
 
 export const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="flex flex-col gap-[50px]  bottom-0 w-full py-[50px]">
       <div className="-bg-blue -text-white  font-medium flex flex-col items-center py-[50px] md:py-[100px] gap-[30px] px-5 text-center md:text-start md:flex-row justify-between lg:justify-around lg:gap-[200px] md:px-10 lg:px-0">
         <p className="text-[1.5rem] md:text-[1.6rem] md:w-[50%] lg:text-[2.5rem] lg:w-[30%]">
           Sign up for our newsletter & get 20% off{" "}
         </p>
-        <ButtonWhite text={"SIGN UP FOR FREE"} />
+        <Link to={"/login"}>
+          <ButtonWhite text={"SIGN UP FOR FREE"} />
+        </Link>
       </div>
       <div className="text-[18px] flex flex-col md:flex-row justify-around gap-[30px] px-6 md:px-10">
         <div className="w-[50%] md:w-[20%] md:text-[16px]">

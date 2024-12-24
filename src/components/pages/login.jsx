@@ -7,13 +7,16 @@ import {
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { FaGoogle } from "react-icons/fa";
+import { useEffect } from "react";
 
 export const Login = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const handleGoogleLogin = async (e) => {
     e.preventDefault();
@@ -41,55 +44,14 @@ export const Login = () => {
 
   return (
     <div className="login-page flex flex-col items-center justify-center h-screen bg-gray-100">
-      <h2 className="text-2xl font-bold mb-4">Login</h2>
-      <form
-        className="bg-white p-6 rounded shadow-md w-full max-w-sm"
-        onSubmit={(e) => e.preventDefault()}
-      >
-        <div className="mb-4">
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Email:
-          </label>
-          <input
-            type="email"
-            id="email"
-            className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="password"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Password:
-          </label>
-          <input
-            type="password"
-            id="password"
-            className="mt-1 block w-full border border-gray-300 rounded-md p-2"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white rounded-md p-2 hover:bg-blue-600"
-        >
-          Login
-        </button>
-      </form>
+      <h2 className="text-[2rem] md:text-[2.4rem] font-medium  mb-4">Login</h2>
+
       <div className="google-login mt-4">
         <button
           onClick={handleGoogleLogin}
-          className="w-full bg-red-500 text-white rounded-md p-2 hover:bg-red-600"
+          className="w-full flex items-center gap-4 text-[2rem] text-white shadow-customShadow p-2 hover:bg-red-600 border -border-gray rounded-[10px]"
         >
+          <FaGoogle />
           Login with Google
         </button>
       </div>

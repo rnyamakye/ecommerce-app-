@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { FaChevronRight } from "react-icons/fa6";
 import ContactForm from "../Form";
@@ -24,11 +24,15 @@ export const Contact = () => {
     return 0; // Default return if contentRef is not available
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <motion.main
       ref={contentRef}
       style={{ y }}
-      className=" flex flex-col gap-[100px] md:gap-[150px] overflow-x-hidden w-[100vw] items-center py-[100px]"
+      className=" flex flex-col gap-[100px] md:gap-[150px] overflow-x-hidden w-[100vw] items-center py-[150px]"
     >
       <header className="flex flex-col gap-[50px] lg:mx-10 items-center">
         <div className="flex flex-col items-center gap-[20px]">
@@ -52,7 +56,7 @@ export const Contact = () => {
           </div>
         </div>
       </header>
-      <section className="w-[100vw] flex flex-col items-center gap-[50px]">
+      <section className="w-[100vw] flex flex-col items-center gap-[50px] md:flex-row md:items-start md:w-[90vw]">
         <ContactForm />
         <FAQ />
       </section>

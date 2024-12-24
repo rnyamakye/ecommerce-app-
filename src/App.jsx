@@ -16,6 +16,7 @@ import { OrderProvider } from "./components/OrderContext";
 import ItemDetails from "./components/pages/itemDetails";
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
 import { ToastContainer } from "react-toastify";
+import { Login } from "./components/pages/login";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/order-history" element={<OrderHistory />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/item/:id" element={<ItemDetails />} />
           </Routes>
           <Footer />

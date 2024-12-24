@@ -1,5 +1,5 @@
 // src/components/pages/OrderHistory.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import { useOrder } from "../OrderContext";
 import { useNavigate } from "react-router-dom"; // Importing useOrder
 import { ButtonWhite } from "../Button";
@@ -7,6 +7,9 @@ import { ButtonWhite } from "../Button";
 const OrderHistory = () => {
   const { orders } = useOrder(); // Accessing orders from context
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className="flex flex-col gap-[30px] items-center py-[150px]">

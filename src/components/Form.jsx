@@ -32,7 +32,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className=" flex flex-col items-center gap-[10px] text-[18px] w-[90%]"
+      className=" flex flex-col items-center gap-[10px] text-[18px] w-[90%] md:w-[45%]"
     >
       <input
         placeholder="Name"

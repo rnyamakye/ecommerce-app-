@@ -28,7 +28,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="mt-8 w-[90%] flex flex-col gap-[30px]">
+    <div className="mt-8 w-[90%] md:w-[45%] -translate-y-10 flex flex-col gap-[30px]">
       <h2 className="text-[1.8rem] font-medium text-center">
         FREQUENTLY ASKED
       </h2>

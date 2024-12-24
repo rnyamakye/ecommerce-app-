@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { FaChevronRight } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
@@ -24,6 +24,10 @@ const About = () => {
     return 0; // Default return if contentRef is not available
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <motion.main
       ref={contentRef}
@@ -46,7 +50,7 @@ const About = () => {
         </div>
       </header>
       <section className="flex flex-col items-center gap-[50px] w-[75vw]">
-        <div className="flex flex-col items-center justify-center gap-[30px] md:gap-x-0 md:w-[75vw] md:grid md:grid-cols-2 md:grid-rows-2 text-center md:text-start lg:flex lg:flex-row lg:w-[90vw] lg:gap-[30px] lg:px-[100px]">
+        <div className="flex flex-col items-center justify-center gap-[30px] md:gap-x-0 md:w-[75vw] md:grid md:grid-cols-2 md:grid-rows-2 text-center md:text-start lg:w-[100vw] lg:gap-[30px] lg:px-[100px] lg:grid lg:grid-cols-2 ">
           <div className=" md:w-[80%] flex flex-col lg:gap-[10px]">
             <h2 className="text-[1.5rem] md:text-[1.8rem] font-medium">
               SHOP ONLINE
@@ -124,7 +128,9 @@ const About = () => {
           />
         </div>
         <div className="w-full flex flex-col gap-[20px] items-center md:gap-[50px] ">
-          <h3 className="text-[1.6rem] md:text-[1.8rem] lg:text-[3rem] font-semibold">FOLLOW @WEARHOUSE</h3>
+          <h3 className="text-[1.6rem] md:text-[1.8rem] lg:text-[3rem] font-semibold">
+            FOLLOW @WEARHOUSE
+          </h3>
           <div className="flex flex-col gap-[30px] md:grid md:grid-rows-2 md:grid-cols-2 lg:flex lg:flex-row lg:w-[90vw] lg:mx-[100px] lg:gap-[15px]">
             <AboutCard
               image={"/mw4Ie2Fs2QvK2MVyohtc6HRGw.jpg"}

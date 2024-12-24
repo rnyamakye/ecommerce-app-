@@ -1,10 +1,10 @@
 // src/components/pages/PaymentPage.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useCart } from "../CartContext"; // Importing useCart
 import { useNavigate } from "react-router-dom"; // Importing useNavigate
-import { Button } from "../Button";
 import { useOrder } from "../OrderContext"; // Importing useOrder
 import PaymentModal from "../PaymentModal"; // Import the PaymentModal component
+import { ButtonBlue } from "../Button";
 
 export const CheckoutPage = () => {
   const { cartItems, clearCart } = useCart(); // Accessing cart items and clear function
@@ -33,6 +33,7 @@ export const CheckoutPage = () => {
         price: item.price,
         size: selectedSizes[item.id],
         plan: selectedPlans[item.id],
+        quantity: item.quantity, // Include quantity in order details
       };
       addOrder(orderDetails);
     });
@@ -49,10 +50,14 @@ export const CheckoutPage = () => {
     }, 5000); // Redirect after 5 seconds
   };
 
-  // Calculate total amount
+  // Calculate total amount based on quantity
   const totalAmount = cartItems
-    .reduce((total, item) => total + parseFloat(item.price), 0)
+    .reduce((total, item) => total + parseFloat(item.price) * item.quantity, 0)
     .toFixed(2);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className="flex flex-col gap-[50px] items-center py-[150px]">
@@ -63,31 +68,32 @@ export const CheckoutPage = () => {
         </div>
       )}
       {cartItems.length > 0 ? (
-        <div className="flex flex-col gap-[50px] w-[90vw] items-center">
-          <div className="flex flex-col md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 gap-[30px]">
+        <div className=" w-[90vw] flex flex-col items-center">
+          <div className="flex flex-col md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 gap-4">
             {cartItems.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col items-center -border-gray shadow-customShadow border px-5 pt-5 pb-10 rounded-[10px] mb-4 w-full"
+                className="flex flex-col items-center border -border-gray shadow-customShadow p-4 pt-5 pb-8 rounded mb-4 w-full"
               >
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-[300px] object-cover rounded mb-2"
+                  className="w-full h-48 object-cover rounded mb-2"
                 />
                 <h2 className="text-[1.2rem] uppercase font-medium">
-                  {item.name}
+                  {item.name} <span className="lowercase">x</span>{" "}
+                  {item.quantity}
                 </h2>
-                <p className="text-[20px] font-medium">${item.price}</p>
-
+                <p className="text-[20px] font-medium">${item.price}</p>{" "}
+                {/* Display quantity */}
                 {/* Size Selection */}
-                <div className="flex flex-col mt-4 items-center w-full">
-                  <label className="mb-2">Select Size:</label>
+                <div className="flex w-full items-center flex-col mt-4">
+                  <label className="mb-2 text-[1.2rem]">Select Size:</label>
                   <div className="flex gap-4">
                     {["S", "M", "L", "XL"].map((size) => (
                       <label
                         key={size}
-                        className="flex items-center flex-col gap-2"
+                        className="flex flex-col gap-2 items-center"
                       >
                         <input
                           type="radio"
@@ -97,15 +103,16 @@ export const CheckoutPage = () => {
                           onChange={() => handleSizeChange(item.id, size)}
                           className="mr-2"
                         />
-                        <span className="-translate-x-1"> {size}</span>
+                        <span className="-translate-x-1">{size}</span>
                       </label>
                     ))}
                   </div>
                 </div>
-
                 {/* Payment Plan Selection */}
-                <div className="flex flex-col mt-4 w-full items-center">
-                  <label className="mb-2">Select Payment Plan:</label>
+                <div className="flex w-full items-center flex-col mt-4">
+                  <label className="mb-2 text-[1.2rem] ">
+                    Select Payment Plan:
+                  </label>
                   <div className="flex gap-4">
                     {["full", "installments"].map((plan) => (
                       <label key={plan} className="flex items-center">
@@ -127,8 +134,9 @@ export const CheckoutPage = () => {
               </div>
             ))}
           </div>
+
           {/* Display total amount */}
-          <h2 className="text-[1.2rem] font-medium mt-4">
+          <h2 className="text-xl font-bold mt-4">
             Total Amount: ${totalAmount}
           </h2>
 
@@ -137,14 +145,14 @@ export const CheckoutPage = () => {
             onClick={() => setIsModalOpen(true)}
             className="bg-green-500 text-white rounded p-2 mt-4"
           >
-            <Button text={"Confirm Payment"} />
+            <ButtonBlue text={"Proceed to Payment"} />
           </div>
 
           {/* Payment Modal */}
           <PaymentModal
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
-            onConfirm={(details) => {
+            onConfirm={() => {
               handleConfirmPayment();
               clearCart();
               navigate("/order-history");
