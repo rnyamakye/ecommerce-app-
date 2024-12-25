@@ -1,5 +1,4 @@
-// src/components/pages/CartPage.jsx
-import React, { useEffect } from "react";
+
 import { useCart } from "../CartContext"; // Importing useCart
 import { ShopItemCard } from "../itemCard"; // Assuming you want to reuse this card for displaying in cart
 import { useNavigate } from "react-router-dom"; // Importing useNavigate

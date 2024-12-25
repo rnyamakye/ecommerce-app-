@@ -1,5 +1,5 @@
 // src/FAQ.jsx
-import React, { useState } from "react";
+import  { useState } from "react";
 import { GiClothes } from "react-icons/gi";
 
 const FAQ = () => {

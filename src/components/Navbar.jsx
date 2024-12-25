@@ -1,5 +1,4 @@
-// src/Navbar.jsx
-import React from "react";
+
 import DropdownButton from "./Dropdown"; // Importing a DropdownButton component for additional options
 import { HiShoppingBag } from "react-icons/hi2"; // Shopping bag icon
 import { NavLink } from "react-router-dom"; // NavLink for navigation

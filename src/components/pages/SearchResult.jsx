@@ -1,5 +1,4 @@
-// src/SearchResults.jsx
-import React from "react";
+
 import { useLocation } from "react-router-dom";
 import { itemData } from "../../assets/Data"; // Import your data
 import { ShopItemCard } from "../itemCard";

@@ -1,5 +1,5 @@
 // src/components/pages/PaymentPage.jsx
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useCart } from "../CartContext"; // Importing useCart
 import { useNavigate } from "react-router-dom"; // Importing useNavigate
 import { useOrder } from "../OrderContext"; // Importing useOrder

@@ -1,5 +1,5 @@
 // src/components/CartContext.js
-import React, { createContext, useContext, useState, useEffect } from "react";
+import  { createContext, useContext, useState, useEffect } from "react";
 import { toast } from "react-toastify"; // Import toast
 
 const CartContext = createContext();

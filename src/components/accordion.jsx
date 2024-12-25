@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link } from "react-router-dom"; // Ensure you have react-router-dom installed
 
 const AccordionItem = ({ image, to, name, isOpen, onClick }) => {

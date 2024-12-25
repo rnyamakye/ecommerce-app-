@@ -1,5 +1,5 @@
 // src/components/pages/ItemDetails.js
-import React, { useState } from "react";
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useCart } from "../CartContext";
 import { itemData } from "../../assets/Data";// Assuming you have a product data source
