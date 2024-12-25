@@ -10,8 +10,8 @@ export const ItemCard = ({ name, image, price, discount, to }) => {
   };
 
   return (
-    <Link className="flex flex-col gap-[5px] w-[80vw] md:w-fit" to={to}>
-      <div className="group relative w-[80vw] h-[400px] md:w-[30vw] md:h-[600px] cursor-pointer overflow-hidden transition-opacity hover:opacity-100 lg:w-[400px] lg:h-[500px]">
+    <div className="flex flex-col gap-[5px] w-[80vw] md:w-fit">
+      <div className="group relative w-[80vw] h-[400px] md:w-[30vw] md:h-[600px] cursor-pointer overflow-hidden transition-opacity hover:opacity-100 lg:w-[20vw] lg:h-[400px]">
         <img
           src={image}
           className="object-cover object-top w-full h-[100%] md:h-full lg:h-[100%] transform transition duration-500 group-hover:scale-[1.05] rounded-[3px]"
@@ -36,7 +36,7 @@ export const ItemCard = ({ name, image, price, discount, to }) => {
         </span>
         <span className="text-[16px] font-semibold">${price}</span>
       </div>
-    </Link>
+    </div>
   );
 };
 export const CartItemCard = ({ name, image, price, discount, to }) => {
@@ -79,10 +79,10 @@ export const ShopItemCard = ({ name, image, price, to }) => {
   };
   return (
     <Link
-      className="flex flex-col gap-[5px] w-[80vw] md:w-[100%] md:h-[600px]"
+      className="flex flex-col gap-[5px] w-[80vw] md:w-[300px] md:h-[450px]"
       to={to}
     >
-      <div className="group relative w-[80vw] h-[400px] md:w-[100%] md:h-[500px] cursor-pointer overflow-hidden transition-opacity hover:opacity-100 lg:w-[400px] lg:h-[500px]">
+      <div className="group relative w-[80vw] h-[400px] md:w-[100%] md:h-[500px] cursor-pointer overflow-hidden transition-opacity hover:opacity-100 lg:w-[300px] lg:h-[400px]">
         <img
           src={image}
           className="object-cover object-top w-full h-[100%] md:h-full lg:h-[100%] transform transition duration-500 group-hover:scale-[1.05] rounded-[3px]"
@@ -100,10 +100,10 @@ export const ShopItemCard = ({ name, image, price, to }) => {
       </div>
 
       <div className="flex flex-col items-start">
-        <span className="text-[18px] font-semibold uppercase hover:underline transition-all duration-300 ">
+        <span className="text-[15px] font-semibold uppercase hover:underline transition-all duration-300 ">
           {name}
         </span>
-        <span className="text-[16px] font-semibold">${price}</span>
+        <span className="text-[14px] font-semibold">${price}</span>
       </div>
     </Link>
   );
@@ -112,7 +112,7 @@ export const ShopItemCard = ({ name, image, price, to }) => {
 export const GenderCard = ({ image, to, gender }) => {
   return (
     <Link to={to}>
-      <div className="group relative w-[95vw] h-[400px] md:w-[45vw] lg:w-[30vw] lg:h-[600px] cursor-pointer overflow-hidden transition-opacity hover:opacity-100 md:h-[500px]">
+      <div className="group relative w-[95vw] h-[400px] md:w-[45vw] lg:w-[30vw] lg:h-[30vw] cursor-pointer overflow-hidden transition-opacity hover:opacity-100 md:h-[500px]">
         <img
           src={image}
           className="object-cover w-full h-[100%] md:h-full transform transition duration-500 group-hover:scale-[1.07] rounded-[3px]"
@@ -129,21 +129,14 @@ export const GenderCard = ({ image, to, gender }) => {
   );
 };
 
-export const SliderItemCard = ({ image, to, name, price }) => {
+export const SliderItemCard = ({ image, name, price }) => {
   return (
-    <div className="flex flex-col gap-[5px] h-[500px] w-[80vw] md:w-[100%] md:h-[600px] lg:w-[600px] lg:h-[750px]">
-      <div className="group relative w-[80vw] md:w-[50vw] h-[400px] lg:w-[550px] lg:h-[650px] md:h-[600px] overflow-hidden transition-opacity hover:opacity-100">
+    <div className="flex flex-col gap-[5px] h-[500px] w-[80vw] md:w-[100%] md:h-[600px] lg:w-[300px] lg:h-[500px]">
+      <div className="group relative w-[80vw] md:w-[50vw] h-[400px] lg:w-[300px] lg:h-[400px] md:h-[450px] overflow-hidden transition-opacity hover:opacity-100">
         <img
           src={image}
-          className="object-cover  w-[100%] h-[600px] lg:h-[650px] lg:w-[550px] transform transition duration-500 group-hover:scale-[1.05] rounded-[3px]"
+          className="object-cover w-[100%] h-[500px] lg:h-[400px] lg:w-[550px] transform transition duration-500 group-hover:scale-[1.05] rounded-[3px]"
         />
-        <div className="group-hover:-bg-black/35 w-full h-full absolute group-hover:flex-col items-center justify-end top-0 group-hover:flex transition-all  duration-300 ease-in-out ">
-          <Link to={"/shop/category/all"}>
-            <button className="-bg-blue -text-white text-[20px] font-medium group-hover:w-fit px-6 py-3 mb-[100px] hover:scale-[1.1] group-hover:block hidden  transition-all duration-300">
-              Add to Cart
-            </button>
-          </Link>
-        </div>
       </div>
 
       <div className="flex flex-col items-start -text-black">

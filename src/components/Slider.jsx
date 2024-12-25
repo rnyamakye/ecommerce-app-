@@ -34,10 +34,10 @@ const Carousel = ({
 
   return (
     <div
-      className={`group overflow-hidden relative w-[80vw] h-[100%] md:w-[95vw] lg:w-[70vw] lg:h-[800px]`}
+      className={`group overflow-hidden relative w-[80vw] h-[100%] md:w-[95vw] lg:w-[60vw] lg:h-[500px]`}
     >
       <div
-        className="flex transition-transform ease-out duration-500 md:gap-5 lg:gap-12"
+        className="flex transition-transform ease-out duration-500 md:gap-5 lg:gap-[50px]"
         style={{
           transform: `translateX(-${
             curr * (viewportWidth <= 480 ? 100 : viewportWidth <= 768 ? 40 : 48)

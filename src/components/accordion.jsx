@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"; // Ensure you have react-router-dom ins
 const AccordionItem = ({ image, to, name, isOpen, onClick }) => {
   return (
     <div
-      className={`relative h-[400px] md:h-[700px] transition-all duration-500 ${
+      className={`relative h-[400px] md:h-[400px] transition-all duration-500 ${
         isOpen
           ? "rounded-[20px] w-full h-[400px] "
           : "w-[10%] md:w-[25%] rounded-[3px] h-[400px] "

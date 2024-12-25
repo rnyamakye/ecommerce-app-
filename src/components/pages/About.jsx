@@ -37,7 +37,7 @@ const About = () => {
       <header className="flex flex-col gap-[100px] lg:mx-10">
         <div className="flex flex-col items-center gap-[20px]">
           <h1 className="text-[2.5rem] md:text-[3rem] font-bold">ABOUT US</h1>
-          <div className="flex items-center md:text-[21px] gap-5">
+          <div className="flex items-center md:text-[18px] gap-5">
             <span>Home</span> <FaChevronRight className="text-[0.8rem]" />
             <span className="-text-blue">About Us</span>
           </div>
@@ -50,38 +50,38 @@ const About = () => {
         </div>
       </header>
       <section className="flex flex-col items-center gap-[50px] w-[75vw]">
-        <div className="flex flex-col items-center justify-center gap-[30px] md:gap-x-0 md:w-[75vw] md:grid md:grid-cols-2 md:grid-rows-2 text-center md:text-start lg:w-[100vw] lg:gap-[30px] lg:px-[100px] lg:grid lg:grid-cols-2 ">
-          <div className=" md:w-[80%] flex flex-col lg:gap-[10px]">
+        <div className="flex flex-col items-center justify-center gap-[30px] md:gap-x-0 md:w-[75vw] md:grid md:grid-cols-2 md:grid-rows-2 text-center md:text-start lg:w-[100vw] lg:gap-[30px] lg:px-[100px] lg:grid lg:grid-cols-2 md:place-content-center md:translate-x-[100px]">
+          <div className=" md:w-[50%] flex flex-col lg:gap-[10px]">
             <h2 className="text-[1.5rem] md:text-[1.8rem] font-medium">
               SHOP ONLINE
             </h2>
-            <p className="text-[18px] md:text-[21px] opacity-60 md:leading-9">
+            <p className="text-[18px] md:text-[18px] opacity-60 md:leading-9">
               Explore the vast collection of premium clothing from the the
               comfort of your own home.
             </p>
           </div>
-          <div className="md:w-[80%] flex flex-col lg:gap-[10px]">
+          <div className="md:w-[50%] flex flex-col lg:gap-[10px]">
             <h2 className="text-[1.5rem] md:text-[1.8rem] font-medium">
               FREE SHIPPING
             </h2>
-            <p className="text-[18px] md:text-[21px] opacity-60 md:leading-9">
+            <p className="text-[18px] md:text-[18px] opacity-60 md:leading-9">
               Enjoy the convenience of free shipping on all orders, nationwide.
             </p>
           </div>
-          <div className="md:w-[80%] flex flex-col lg:gap-[10px]">
+          <div className="md:w-[50%] flex flex-col lg:gap-[10px]">
             <h2 className="text-[1.5rem] md:text-[1.8rem] font-medium">
               RETURN POLICY
             </h2>
-            <p className="text-[18px] md:text-[21px] opacity-60 md:leading-9">
+            <p className="text-[18px] md:text-[18px] opacity-60 md:leading-9">
               Your satisfaction is our priority. Return any product you're not
               satisfied with.
             </p>
           </div>
-          <div className="md:w-[80%] flex flex-col lg:gap-[10px]">
+          <div className="md:w-[50%] flex flex-col lg:gap-[10px]">
             <h2 className="text-[1.5rem] md:text-[1.8rem] font-medium">
               PAYMENT METHOD
             </h2>
-            <p className="text-[18px] md:text-[21px] opacity-60 md:leading-9">
+            <p className="text-[18px] md:text-[18px] opacity-60 md:leading-9">
               Choose from a variety of secure payment methods to complete your
               transaction with ease.
             </p>
@@ -90,7 +90,7 @@ const About = () => {
       </section>
       <section className="flex flex-col items-center mx-5 gap-[150px] md:mx-10 lg:mx-[100px] lg:w-[80vw]">
         <div>
-          <p className="text-center text-[18px] md:text-[21px] font-semibold">
+          <p className="text-center text-[18px] md:text-[18px] font-semibold">
             At the heart of Serrena lies a distinctive philosophy that
             transcends trends and embraces the essence of enduring style. Our
             collections are a harmonious blend of sophistication, versatility,

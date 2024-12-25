@@ -43,7 +43,7 @@ const SearchBar = () => {
           placeholder="Search..."
           className={`border-gray-300 bg-gray rounded transition-all duration-300 ease-in-out p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
             isActive || window.innerWidth < 768
-              ? "md:w-[12rem] opacity-100 -bg-gray"
+              ? "md:w-[12rem] h-[30px] opacity-100 -bg-gray"
               : "w-0 opacity-0"
           }`}
           style={{
@@ -53,7 +53,7 @@ const SearchBar = () => {
               ? searchTerm.length > "0"
                 ? "12rem"
                 : "6rem"
-              : "0" | window.innerWidth < 768 ? "90vw" : "0",
+              : "0" | window.innerWidth < 768 ? "90vw" : "0" | window.innerWidth > 768 ? "0" : "0",
           }}
           onBlur={() => setIsActive(false)} // Hide input when it loses focus
         />

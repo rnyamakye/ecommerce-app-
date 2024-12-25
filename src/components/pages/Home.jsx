@@ -45,9 +45,9 @@ export const Home = () => {
         className=" flex flex-col gap-[100px] md:gap-[100px] overflow-x-hidden w-[100vw] py-[50px]"
       >
         <header className="flex flex-col gap-[50px]">
-          <div className="bg-[url('/pexels-mart-production-7255322(2).jpg')] w-screen bg-cover bg-center h-[380px] md:h-[500px] flex items-end justify-center lg:justify-start pb-[10%] lg:pb-[10%] lg:h-[60vh]">
+          <div className="bg-[url('/pexels-mart-production-7255322(2).jpg')] w-screen bg-cover bg-center h-[380px] md:h-[500px] flex items-end justify-center lg:justify-start pb-[10%] lg:pb-[10%] lg:h-[85vh]">
             <div className="flex flex-col gap-5 items-center lg:items-start lg:w-[50%] mx-[10vw]">
-              <h1 className="text-[2.4rem] md:text-[40px] font-bold -text-white text-center leading-none lg:text-[5rem] lg:text-start">
+              <h1 className="text-[2.4rem] md:text-[40px] font-bold -text-white text-center leading-none lg:text-[3.5rem] lg:text-start">
                 WEAR CLOTHES THAT MATTER
               </h1>
               <Button
