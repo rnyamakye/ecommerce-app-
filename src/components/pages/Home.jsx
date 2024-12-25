@@ -1,10 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import { useEffect } from "react";
 import { itemData } from "../../assets/Data";
-import { Button, ButtonWhite } from "../Button";
+import { Button } from "../Button";
 import { ItemCard, GenderCard } from "../itemCard";
 import { SliderItemCard } from "../itemCard";
 import Carousel from "../Slider";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Accordion from "../accordion";
 import { useNavigate } from "react-router-dom";
 
@@ -14,36 +13,13 @@ export const Home = () => {
   const featured = itemData.slice(3, 6);
   const slides = itemData.slice(6, 17);
 
-  const contentRef = useRef(null);
-  const { scrollYProgress } = useScroll();
-
-  // Create a smooth scroll effect
-  const smoothProgress = useSpring(scrollYProgress, {
-    mass: 1.5,
-    stiffness: 0,
-    damping: 20,
-  });
-
-  // Transform the scroll progress to a y value for motion
-  const y = useTransform(smoothProgress, (value) => {
-    if (contentRef.current) {
-      const contentHeight = contentRef.current.scrollHeight; // Get the height of the content
-      return value * -(contentHeight - window.innerHeight); // Calculate the y position
-    }
-    return 0; // Default return if contentRef is not available
-  });
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
-      <motion.main
-        ref={contentRef}
-        style={{ y }}
-        className=" flex flex-col gap-[100px] md:gap-[100px] overflow-x-hidden w-[100vw] py-[50px]"
-      >
+      <main className=" flex flex-col gap-[100px] md:gap-[100px] overflow-x-hidden w-[100vw] py-[50px]">
         <header className="flex flex-col gap-[50px]">
           <div className="bg-[url('/pexels-mart-production-7255322(2).jpg')] w-screen bg-cover bg-center h-[380px] md:h-[500px] flex items-end justify-center lg:justify-start pb-[10%] lg:pb-[10%] lg:h-[85vh]">
             <div className="flex flex-col gap-5 items-center lg:items-start lg:w-[50%] mx-[10vw]">
@@ -152,7 +128,7 @@ export const Home = () => {
             </div>
           </div>
         </section>
-      </motion.main>
+      </main>
     </>
   );
 };

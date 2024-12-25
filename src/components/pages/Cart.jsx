@@ -39,7 +39,7 @@ const CartPage = () => {
                 <div className="flex items-center mt-2 text-[2rem]">
                   <button
                     onClick={() => removeFromCart(item.id)}
-                    className="bg-red-500 absolute top-3 text-white rounded p-2 mt-2 text-[2rem] right-1"
+                    className="bg-red-500 absolute top-3 text-white rounded p-2 mt-2 text-[2rem] right-3"
                   >
                     <IoClose />
                   </button>

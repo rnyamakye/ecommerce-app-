@@ -1,37 +1,18 @@
 import { useRef, useEffect } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { FaChevronRight } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { AboutCard } from "../itemCard";
 
 const About = () => {
-  const contentRef = useRef(null);
-  const { scrollYProgress } = useScroll();
-
-  // Create a smooth scroll effect
-  const smoothProgress = useSpring(scrollYProgress, {
-    mass: 1.5,
-    stiffness: 0,
-    damping: 20,
-  });
-
-  // Transform the scroll progress to a y value for motion
-  const y = useTransform(smoothProgress, (value) => {
-    if (contentRef.current) {
-      const contentHeight = contentRef.current.scrollHeight; // Get the height of the content
-      return value * -(contentHeight - window.innerHeight); // Calculate the y position
-    }
-    return 0; // Default return if contentRef is not available
-  });
+  
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <motion.main
-      ref={contentRef}
-      style={{ y }}
+    <main
+     
       className=" flex flex-col gap-[100px] md:gap-[150px] overflow-x-hidden w-[100vw] items-center py-[100px]"
     >
       <header className="flex flex-col gap-[100px] lg:mx-10">
@@ -151,7 +132,7 @@ const About = () => {
           </div>
         </div>
       </section>
-    </motion.main>
+    </main>
   );
 };
 

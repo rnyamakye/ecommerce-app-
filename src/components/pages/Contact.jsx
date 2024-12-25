@@ -1,39 +1,15 @@
-import { useRef, useEffect } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import {  useEffect } from "react";
 import { FaChevronRight } from "react-icons/fa6";
 import ContactForm from "../Form";
 import FAQ from "../FAQSection";
 
 export const Contact = () => {
-  const contentRef = useRef(null);
-  const { scrollYProgress } = useScroll();
-
-  // Create a smooth scroll effect
-  const smoothProgress = useSpring(scrollYProgress, {
-    mass: 1.5,
-    stiffness: 0,
-    damping: 20,
-  });
-
-  // Transform the scroll progress to a y value for motion
-  const y = useTransform(smoothProgress, (value) => {
-    if (contentRef.current) {
-      const contentHeight = contentRef.current.scrollHeight; // Get the height of the content
-      return value * -(contentHeight - window.innerHeight); // Calculate the y position
-    }
-    return 0; // Default return if contentRef is not available
-  });
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <motion.main
-      ref={contentRef}
-      style={{ y }}
-      className=" flex flex-col gap-[100px] md:gap-[150px] overflow-x-hidden w-[100vw] items-center py-[150px]"
-    >
+    <main className=" flex flex-col gap-[100px] md:gap-[150px] overflow-x-hidden w-[100vw] items-center py-[150px]">
       <header className="flex flex-col gap-[50px] lg:mx-10 items-center">
         <div className="flex flex-col items-center gap-[20px]">
           <h1 className="text-[2.5rem] md:text-[3rem] font-bold">CONTACT US</h1>
@@ -60,6 +36,6 @@ export const Contact = () => {
         <ContactForm />
         <FAQ />
       </section>
-    </motion.main>
+    </main>
   );
 };
